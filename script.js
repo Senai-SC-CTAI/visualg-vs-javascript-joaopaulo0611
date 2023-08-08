@@ -11,3 +11,13 @@ function calcularIMC() {
         document.getElementById("resultadoo").innerHTML = imc+ "<br>"+"Sobrepeso";
     }
 }
+function copyToClipboard() {
+    const codeSnippet = document.getElementById('code-snippet');
+    const range = document.createRange();
+    range.selectNode(codeSnippet);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    alert('Código copiado para a área de transferência!');
+}
